@@ -13,7 +13,7 @@ services:
 
   face-db:
     privileged: true
-    image: postgres:14.8-alpine3.18
+    image: docker.io/library/postgres:14.8-alpine3.18
     restart: always
     environment:
       - POSTGRES_USER=app
