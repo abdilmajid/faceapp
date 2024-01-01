@@ -3,28 +3,13 @@ services:
 
   face-web:
     build: ./face-web
-    environment:
-      # env for api call
-      - PORT=3000 
-      - REACT_APP_API_CALL=http://192.168.50.5:3001
     ports:
       - '3000:3000'
-    # volumes:
-    #   - ./face-web:/app
-    #   - /app/node_modules
 
   face-api:
     build: ./face-api
-    environment:
-      # API token for clarifai service
-      - PORT=3001
-      - DATABASE_URL=http://192.168.50.5:5432
-      - API_CLARIFAI="5dc3929cc3234e2e8ad6117dd0af96c3"
     ports:
       - '3001:3001'
-    # volumes:
-    #   - ./face-api:/app
-    #   - /app/node_modules
 
   face-db:
     privileged: true
